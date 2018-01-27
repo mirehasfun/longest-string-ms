@@ -16,17 +16,21 @@ public class StringExtractorTest {
     }
 
     @Test
-    public void testExtractStartingCharacter() {
-        String input = "asdf";
-        String expected = "s";
-        String actual = extractor.extractStartingCharacter(input);
-        Assert.assertEquals(expected, actual);
+    public void testFindAllLongestStringsStartingWith_InputArrayResultingInEmptyResult() {
+        String[] input = new String[]{"asdf"};
+        String[] expected = new String[]{};
+        String[] actual = extractor.findAllLongestStringsStartingWith(input);
+
+        Assert.assertArrayEquals(expected, actual);
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void testFindAllLongestStringsStartingWith_InputParameterValidation() {
-        String[] input = new String[]{"asdf"};
-        extractor.findAllLongestStringsStartingWith(input);
+    @Test
+    public void testFindAllLongestStringsStartingWith_InputArrayResultingInInputReturned() {
+        String[] input = new String[]{"fabc"};
+        String[] expected = new String[]{"fabc"};
+        String[] actual = extractor.findAllLongestStringsStartingWith(input);
+
+        Assert.assertArrayEquals(expected, actual);
     }
 
     @Test

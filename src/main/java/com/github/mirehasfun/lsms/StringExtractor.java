@@ -9,15 +9,15 @@ import java.util.stream.Stream;
 public class StringExtractor {
 
     public String[] findAllLongestStringsStartingWith(String[] inputArray) {
-        if (inputArray == null || inputArray.length <= 1) {
-            throw new IllegalArgumentException("inputArray must be non-null and have a size > 1");
+        if (inputArray == null) {
+            return new String[]{};
         }
 
         return findAllLongestStringsWithStartCharacter(extractStartingCharacter(inputArray[0]), inputArray);
     }
 
-    //Analyzes the given string and extracts the one character, that is alpabetically speaking the last one.
-    String extractStartingCharacter(String firstElement) {
+    //Analyzes the given string and extracts the one character, that is alphabetically speaking the last one.
+    private String extractStartingCharacter(String firstElement) {
         return Stream.of(firstElement.split(""))
                 .max(String::compareTo)
                 .get();
