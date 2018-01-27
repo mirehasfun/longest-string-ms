@@ -20,13 +20,35 @@ public class LongestStringControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    public void testPostallLongestStringsStartingWith() throws Exception {
+    public void testAllLongestStringsStartingWith_Example1() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders
                 .post("/allLongestStringsStartingWith")
                 .contentType(MediaType.APPLICATION_JSON)
-                .content("{\"inputArray\": [\"abc\", \"def\"]}")
+                .content("{\"inputArray\": [\"abba\", \"bab\", \"ad\", \"bcd\", \"aba\"]}")
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.content().json("{\"result\": [\"Hello\", \"World\", \"abc\", \"def\"]}"));
+                .andExpect(MockMvcResultMatchers.content().json("{\"result\": [\"bab\", \"bcd\"]}"));
+    }
+
+    @Test
+    public void testAllLongestStringsStartingWith_Example2() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders
+                .post("/allLongestStringsStartingWith")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\"inputArray\": [\"zorro\", \"zorba\", \"zuzan\", \"zoo\", \"zeus\", \"alemania\"]}")
+                .accept(MediaType.APPLICATION_JSON))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.content().json("{\"result\": [\"zorro\", \"zorba\", \"zuzan\"]}"));
+    }
+
+    @Test
+    public void testAllLongestStringsStartingWith_Example3() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders
+                .post("/allLongestStringsStartingWith")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\"inputArray\": [\"zorg\", \"zum\", \"zu\", \"zoo\", \"zeus\", \"alemania\"]}")
+                .accept(MediaType.APPLICATION_JSON))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.content().json("{\"result\": [\"zorg\", \"zeus\"]}"));
     }
 }
