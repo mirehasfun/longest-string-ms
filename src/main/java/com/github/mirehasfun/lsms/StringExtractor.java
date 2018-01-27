@@ -1,6 +1,5 @@
 package com.github.mirehasfun.lsms;
 
-import java.util.Comparator;
 import java.util.stream.Stream;
 
 public class StringExtractor {
@@ -16,7 +15,7 @@ public class StringExtractor {
     //Analyzes the given string and extracts the one character, that is alpabetically speaking the last one.
     String extractStartingCharacter(String firstElement) {
         return Stream.of(firstElement.split(""))
-                .min(Comparator.reverseOrder())
+                .max(String::compareTo)
                 .get();
     }
 }
