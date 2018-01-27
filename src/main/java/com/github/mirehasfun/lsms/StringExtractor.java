@@ -1,11 +1,14 @@
 package com.github.mirehasfun.lsms;
 
+import org.springframework.stereotype.Component;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+@Component
 public class StringExtractor {
 
     public String[] findAllLongestStringsStartingWith(String[] inputArray) {

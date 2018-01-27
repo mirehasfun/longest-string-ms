@@ -1,5 +1,6 @@
 package com.github.mirehasfun.lsms;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,6 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class LongestStringController {
 
+    @Autowired
+    private StringExtractor extractor;
+
     /**
      * The RequestMapping exposing the "allLongestStringsStartingWith" endpoint.
      *
@@ -19,8 +23,6 @@ public class LongestStringController {
      */
     @RequestMapping(value = "/allLongestStringsStartingWith", method = RequestMethod.POST)
     public LongestStringResponse allLongestStringsStartingWith(@RequestBody LongestStringRequest request) {
-
-        StringExtractor extractor = new StringExtractor();
         String[] result = extractor.findAllLongestStringsStartingWith(request.getInputArray());
 
         LongestStringResponse response = new LongestStringResponse();
