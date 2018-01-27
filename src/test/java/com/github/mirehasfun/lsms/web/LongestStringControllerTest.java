@@ -1,4 +1,4 @@
-package com.github.mirehasfun.lsms;
+package com.github.mirehasfun.lsms.web;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,4 +1,4 @@
-package com.github.mirehasfun.lsms;
+package com.github.mirehasfun.lsms.domain;
 
 import org.springframework.stereotype.Component;
 

@@ -1,5 +1,6 @@
-package com.github.mirehasfun.lsms;
+package com.github.mirehasfun.lsms.domain;
 
+import com.github.mirehasfun.lsms.domain.StringExtractor;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

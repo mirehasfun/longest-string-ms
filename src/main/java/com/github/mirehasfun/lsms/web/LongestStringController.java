@@ -1,5 +1,6 @@
-package com.github.mirehasfun.lsms;
+package com.github.mirehasfun.lsms.web;
 
+import com.github.mirehasfun.lsms.domain.StringExtractor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,4 +1,4 @@
-package com.github.mirehasfun.lsms;
+package com.github.mirehasfun.lsms.web;
 
 /**
  * Class representing a request object to the "allLongestStringsStartingWith" endpoint
