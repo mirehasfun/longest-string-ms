@@ -8,9 +8,28 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * Component that implements the business logic of finding and extracting the desired elements of a given input array.
+ * <p>
+ * That is, it finds the longest strings in an array of strings, that start with the latest character of the alphabet
+ * contained in the string of the first element.
+ * <p>
+ * Example:
+ * <pre>
+ *     input = ["abc", "def", "cars", "coma", "cabbage", "curious", "drainpipe"]
+ *     result = ["cabbage", "curious"]
+ * </pre>
+ */
 @Component
 public class StringExtractor {
 
+    /**
+     * Finds all longest strings of the given input array that start with the latest (alphabetically) character of the
+     * first element of the array.
+     *
+     * @param inputArray Array containing strings
+     * @return An array containing the found strings. If the parameter is {@code null}, an empty array is returned.
+     */
     public String[] findAllLongestStringsStartingWith(String[] inputArray) {
         if (inputArray == null) {
             return new String[]{};
