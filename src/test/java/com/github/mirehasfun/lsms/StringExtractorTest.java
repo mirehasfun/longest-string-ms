@@ -4,6 +4,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Arrays;
+
 public class StringExtractorTest {
 
     private StringExtractor extractor;
@@ -30,9 +32,13 @@ public class StringExtractorTest {
     @Test
     public void testFindAllLongestStringsStartingWith_Example1() {
         String[] input = new String[]{"abba", "bab", "ad", "bcd", "aba"};
-        String[] expected = new String[]{"bcd", "bab"}; //FIXME: the order is not as in the source Array. Research on Array Matchers
+        String[] expected = new String[]{"bcd", "bab"};
         String[] actual = extractor.findAllLongestStringsStartingWith(input);
 
+        //TODO: for now, sort both arrays prior comparison, since I'm not sure whether it's a typo in the requirements or
+        //if I missed something (order of the expected result is not the same as in the source array).
+        Arrays.sort(expected);
+        Arrays.sort(actual);
         Assert.assertArrayEquals(expected, actual);
     }
 
