@@ -3,16 +3,19 @@ REST microservice using SpringBoot and Java8 streams
 
 ## How To Build
 **Preconditions**: make sure you have Maven and Java8 JDK installed.
-1. clone the repository
-2. navigate to the cloned repository and run 
+1. Clone the repository
+2. Navigate to the cloned repository and run 
 ~~~
 mvn clean package
 ~~~
-3. after the build completes successfully, you can start the application by running
+
+## How To Run
+1. After the build completes successfully, you can start the application by running
 ~~~
 java -jar target/lsms-0.0.1-SNAPSHOT.jar
 ~~~
 This starts the embedded Tomcat server on port 8080 and exposes the REST endpoint "/allLongestStringsStartingWith".
+
 4. (Optional) If you want the server listening on another port, you can pass it as a system property on the command line like this: 
 ~~~
 java -jar -Dserver.port=9876 target/lsms-0.0.1-SNAPSHOT.jar
