@@ -27,7 +27,7 @@ public class LongestStringControllerTest {
                 .content("{\"inputArray\": [\"abba\", \"bab\", \"ad\", \"bcd\", \"aba\"]}")
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.content().json("{\"result\": [\"bab\", \"bcd\"]}"));
+                .andExpect(MockMvcResultMatchers.content().json("{\"result\": [\"bcd\", \"bab\"]}"));
     }
 
     @Test
